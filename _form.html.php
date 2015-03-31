@@ -77,9 +77,9 @@
         $prijs = $soepen[$row]["prijs"];
         ?>
         <div class="form-group">
-          <label for="soep-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
+          <label for="aantal-soep-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
           <div class="col-xs-2">
-            <input type="number" class="form-control" id="aantal_soep-<?php echo $row + 1; ?>" name="aantal_soep-<?php echo $row + 1; ?>" min=0 placeholder=0>
+            <input type="number" class="form-control" id="aantal-soep-<?php echo $row + 1; ?>" name="aantal-soep-<?php echo $row + 1; ?>" min=0 placeholder=0>
           </div>
           <div class="col-xs-2">
             <p class="control-label">€ <?php echo $prijs; ?></p>
@@ -102,9 +102,9 @@
         $prijs = $voorgerechten[$row]["prijs"];
         ?>
         <div class="form-group">
-          <label for="voorgerecht-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
+          <label for="aantal-voorgerecht-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
           <div class="col-xs-2">
-            <input type="number" class="form-control" id="aantal_voorgerecht-<?php echo $row + 1; ?>" name="aantal_voorgerecht-<?php echo $row + 1; ?>" min=0 placeholder=0>
+            <input type="number" class="form-control" id="aantal-voorgerecht-<?php echo $row + 1; ?>" name="aantal-voorgerecht-<?php echo $row + 1; ?>" min=0 placeholder=0>
           </div>
           <div class="col-xs-2">
             <p class="control-label">€ <?php echo $prijs; ?></p>
@@ -127,9 +127,9 @@
         $prijs = $hoofdgerechten[$row]["prijs"];
         ?>
         <div class="form-group">
-          <label for="hoofdgerecht-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
+          <label for="aantal-hoofdgerecht-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
           <div class="col-xs-2">
-            <input type="number" class="form-control" id="aantal_hoofdgerecht-<?php echo $row + 1; ?>" name="aantal_hoofdgerecht-<?php echo $row + 1; ?>" min=0 placeholder=0>
+            <input type="number" class="form-control" id="aantal-hoofdgerecht-<?php echo $row + 1; ?>" name="aantal-hoofdgerecht-<?php echo $row + 1; ?>" min=0 placeholder=0>
           </div>
           <div class="col-xs-2">
             <p class="control-label">€ <?php echo $prijs; ?></p>
@@ -152,9 +152,9 @@
         $prijs = $kindermenu[$row]["prijs"];
         ?>
         <div class="form-group">
-          <label for="kindermenu-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
+          <label for="aantal-kindermenu-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
           <div class="col-xs-2">
-            <input type="number" class="form-control" id="aantal_kindermenu-<?php echo $row + 1; ?>" name="aantal_kindermenu-<?php echo $row + 1; ?>" min=0 placeholder=0>
+            <input type="number" class="form-control" id="aantal-kindermenu-<?php echo $row + 1; ?>" name="aantal-kindermenu-<?php echo $row + 1; ?>" min=0 placeholder=0>
           </div>
           <div class="col-xs-2">
             <p class="control-label">€ <?php echo $prijs; ?></p>
@@ -177,9 +177,9 @@
         $prijs = $pasta[$row]["prijs"];
         ?>
         <div class="form-group">
-          <label for="pasta-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
+          <label for="aantal-pasta-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
           <div class="col-xs-2">
-            <input type="number" class="form-control" id="aantal_pasta-<?php echo $row + 1; ?>" name="aantal_pasta-<?php echo $row + 1; ?>" min=0 placeholder=0>
+            <input type="number" class="form-control" id="aantal-pasta-<?php echo $row + 1; ?>" name="aantal-pasta-<?php echo $row + 1; ?>" min=0 placeholder=0>
           </div>
           <div class="col-xs-2">
             <p class="control-label">€ <?php echo $prijs; ?></p>
@@ -202,9 +202,9 @@
         $prijs = $maaltijdsalades[$row]["prijs"];
         ?>
         <div class="form-group">
-          <label for="maaltijdsalades-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
+          <label for="aantal-maaltijdsalades-<?php echo $row + 1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
           <div class="col-xs-2">
-            <input type="number" class="form-control" id="aantal_maaltijdsalades-<?php echo $row + 1; ?>" name="aantal_maaltijdsalades-<?php echo $row + 1; ?>" min=0 placeholder=0>
+            <input type="number" class="form-control" id="aantal-maaltijdsalades-<?php echo $row + 1; ?>" name="aantal-maaltijdsalades-<?php echo $row + 1; ?>" min=0 placeholder=0>
           </div>
           <div class="col-xs-2">
             <p class="control-label">€ <?php echo $prijs; ?></p>
@@ -227,9 +227,9 @@
         $prijs = $desserts[$row]["prijs"];
         ?>
         <div class="form-group">
-          <label for="aantal_desserts-<?php echo $row+1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
+          <label for="aantal-desserts-<?php echo $row+1; ?>" class="control-label col-xs-6"><h4><?php echo $gerecht; ?></h4></label>
           <div class="col-xs-2">
-            <input type="number" class="form-control" id="aantal_desserts-<?php echo $row+1; ?>" name="aantal_desserts-<?php echo $row+1; ?>" min=0 placeholder=0>
+            <input type="number" class="form-control" id="aantal-desserts-<?php echo $row+1; ?>" name="aantal-desserts-<?php echo $row+1; ?>" min=0 placeholder=0>
           </div>
           <div class="col-xs-2">
             <p class="control-label">€ <?php echo $prijs; ?></p>
