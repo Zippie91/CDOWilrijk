@@ -66,24 +66,31 @@ function Overzicht() {
     switch(soort) {
       case "soep":
         MakeHeader("Soepen");
+        //FillOrder('Soepen', number, value.value);
         break;
       case "voorgerecht":
         MakeHeader("Voorgerechten");
+        //FillOrder('Voorgerechten', number, value.value);
         break;
       case "hoofdgerecht":
         MakeHeader("Hoofdgerechten");
+        //FillOrder('Hoofdgerechten', number, value.value);
         break;
       case "kindermenu":
         MakeHeader("Kindermenu");
+        //FillOrder('Kindermenu', number, value.value);
         break;
       case "pasta":
         MakeHeader("Pasta");
+        //FillOrder('Pasta', number, value.value);
         break;
       case "maaltijdsalades":
         MakeHeader("Maaltijdsalades");
+        //FillOrder('Maaltijdsalades', number, value.value);
         break;
       case "desserts":
         MakeHeader("Desserts");
+        //FillOrder('Desserts', number, value.value);
         break;
     }
   });
@@ -107,4 +114,10 @@ function MakeHeader(type) {
   if ( count != -1 ) {
     $('.bestellingeten').append("<h4>" + type + "</h4>");
   }
+}
+
+function FillOrder(type, number, amount) {
+  var headers = $('.bestellingeten').children('H4');
+
+
 }
