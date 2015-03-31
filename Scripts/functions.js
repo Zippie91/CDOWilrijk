@@ -66,31 +66,31 @@ function Overzicht() {
     switch(soort) {
       case "soep":
         MakeHeader("Soepen");
-        //FillOrder('Soepen', number, value.value);
+        FillOrder('Soepen', number, value.value);
         break;
       case "voorgerecht":
         MakeHeader("Voorgerechten");
-        //FillOrder('Voorgerechten', number, value.value);
+        FillOrder('Voorgerechten', number, value.value);
         break;
       case "hoofdgerecht":
         MakeHeader("Hoofdgerechten");
-        //FillOrder('Hoofdgerechten', number, value.value);
+        FillOrder('Hoofdgerechten', number, value.value);
         break;
       case "kindermenu":
         MakeHeader("Kindermenu");
-        //FillOrder('Kindermenu', number, value.value);
+        FillOrder('Kindermenu', number, value.value);
         break;
       case "pasta":
         MakeHeader("Pasta");
-        //FillOrder('Pasta', number, value.value);
+        FillOrder('Pasta', number, value.value);
         break;
       case "maaltijdsalades":
         MakeHeader("Maaltijdsalades");
-        //FillOrder('Maaltijdsalades', number, value.value);
+        FillOrder('Maaltijdsalades', number, value.value);
         break;
       case "desserts":
         MakeHeader("Desserts");
-        //FillOrder('Desserts', number, value.value);
+        FillOrder('Desserts', number, value.value);
         break;
     }
   });
@@ -102,7 +102,6 @@ function MakeHeader(type) {
 
   for(i = 0; i < children.length; i++) {
     if(children[i].tagName != 'H4') {
-      alert('No H4 found! Adding <h4>' + type + "</h4>");
     } else if(type == children[i].innerHTML) {
       count = -1;
       break;
@@ -118,6 +117,33 @@ function MakeHeader(type) {
 
 function FillOrder(type, number, amount) {
   var headers = $('.bestellingeten').children('H4');
+  var label = "<label>" + FindDish(type, (number - 1)) + "</label>";
 
 
+  for(i = 0; i < headers.length; i++) {
+    if(headers[i].innerHTML == type) {
+      if(amount != 0) {
+        $(headers[i]).last().after("<div class='row'><div class='col-xs-8'>" + label + "</div><div class='col-xs-4'>" + amount + "</div></div>");
+      }
+    }
+  }
+}
+
+function FindDish(disharray, number) {
+  switch(disharray) {
+    case 'Soepen':
+      return soepen[number];
+    case 'Voorgerechten':
+      return voorgerechten[number];
+    case 'Hoofdgerechten':
+      return hoofdgerechten[number];
+    case 'Kindermenu':
+      return kindermenu[number];
+    case 'Pasta':
+      return pasta[number];
+    case 'Maaltijdsalades':
+      return maaltijdsalades[number];
+    case 'Desserts':
+      return desserts[number];
+  }
 }

@@ -75,7 +75,7 @@
         </div>
         <hr>
         <h3>Bestelling</h3>
-        <div class="bestellingeten">
+        <div class="makeempty bestellingeten">
 
         </div>
       </div>
