@@ -254,10 +254,10 @@
     <label for="betalingswijze" class="control-label col-xs-3">Betalingswijze</label>
     <div class="form-group col-xs-9">
       <div class="radio col-xs-4">
-        <label><input type="radio" name="betaling" checked>Cash</label>
+        <label><input type="radio" name="betaling" value="Cash" checked>Cash</label>
       </div>
       <div class="radio col-xs-4">
-        <label><input type="radio" name="betaling">Overschrijving</label>
+        <label><input type="radio" name="betaling" value="Overschrijving">Overschrijving</label>
       </div>
     </div>
 	  <input id="hiddentotaal" type="hidden">
