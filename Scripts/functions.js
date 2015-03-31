@@ -59,6 +59,52 @@ function Overzicht() {
   });
 
   $.each(bestellingeten, function(i, value) {
-    $('.bestellingeten').append(value.name + " : " + value.value + "<br>");
+    var res = value.name.split("-");
+    var soort = res[1];
+    var number = parseInt(res[2]);
+
+    switch(soort) {
+      case "soep":
+        MakeHeader("Soepen");
+        break;
+      case "voorgerecht":
+        MakeHeader("Voorgerechten");
+        break;
+      case "hoofdgerecht":
+        MakeHeader("Hoofdgerechten");
+        break;
+      case "kindermenu":
+        MakeHeader("Kindermenu");
+        break;
+      case "pasta":
+        MakeHeader("Pasta");
+        break;
+      case "maaltijdsalades":
+        MakeHeader("Maaltijdsalades");
+        break;
+      case "desserts":
+        MakeHeader("Desserts");
+        break;
+    }
   });
+}
+
+function MakeHeader(type) {
+  var children = $('.bestellingeten').children();
+  var count = 0;
+
+  for(i = 0; i < children.length; i++) {
+    if(children[i].tagName != 'H4') {
+      alert('No H4 found! Adding <h4>' + type + "</h4>");
+    } else if(type == children[i].innerHTML) {
+      count = -1;
+      break;
+    } else {
+      count++;
+    }
+  }
+
+  if ( count != -1 ) {
+    $('.bestellingeten').append("<h4>" + type + "</h4>");
+  }
 }

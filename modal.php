@@ -7,7 +7,7 @@
         <h4 class="modal-title" id="myModalLabel">Overzicht</h4>
       </div>
       <div class="modal-body">
-        <h4>Persoonlijke gegevens</h4>
+        <h3>Persoonlijke gegevens</h3>
         <div class="userdata">
           <div class="row">
             <div class="col-xs-3">
@@ -74,7 +74,7 @@
           </div>
         </div>
         <hr>
-        <h4>Bestelling</h4>
+        <h3>Bestelling</h3>
         <div class="bestellingeten">
 
         </div>

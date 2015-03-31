@@ -5,6 +5,9 @@ if(isset($_POST['email'])) {
     $adres .= " / " . $_POST['bus'];
   }
   ?>
+
+  
+
   <h4>Contactgegevens</h4>
   <div class="col-xs-5">
     <p>
