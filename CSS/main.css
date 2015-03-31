@@ -1,0 +1,17 @@
+header h1 {
+  float: left;
+}
+
+header img {
+  float: right;
+  width: auto;
+  height: 80px;
+}
+
+#accordion a {
+  text-decoration: none;
+}
+
+#accordion i {
+  float: right;
+}
