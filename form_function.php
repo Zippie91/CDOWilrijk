@@ -1,3 +1,4 @@
+<?php include ("_config.php"); ?>
 <html lang='nl'>
   <head>
     <meta charset="utf-8">
@@ -44,6 +45,17 @@
 
       $mail->isHTML(true);                                  // Set email format to HTML
 
+      //fill soup variable
+
+      $soep = "Bestelde soepen: ";
+      for ($i = 1; $i <= 3; $i++) {
+      if (isset($_POST["aantal-soep-$i"]) && $_POST["aantal-soep-$i"] != "" && $_POST["aantal-soep-$i"]!= 0) {
+        echo $soep;
+        echo $_POST["aantal-soep-$i"];
+        echo $i;
+        $soep .= $soepen[$i-1]["gerecht"] . " " . $_POST["aantal-soep-$i"];
+        }
+      }
       $body = "<h2>Persoonlijke Gegevens: </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
               "<br><b>Adres: </b>" . $_POST["adres"] . " " . $_POST["nummer"] . " / " . $_POST["bus"] .
               "<br><b>           </b>" . $_POST["postcode"] . " " . $_POST["gemeente"] .
@@ -51,10 +63,12 @@
 
               "<br><h2>Aantal Personen en Tijdstip: </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] .
 
+              $soep .
+/*
               "<br><h2>Bestelde soepen: </h2>" . "<b>Wortel/kokossoepje met curry en koriander: </b>" . " " . $_POST["aantal-soep-1"] .
               "<br><b>Basilicumsoepje met tartaar van mozzarella en tomaat: </b>" . $_POST["aantal-soep-2"] .
               "<br><b>Tomatenvelouté met balletjes: </b>" . $_POST["aantal-soep-3"] .
-
+*/
               "<br><h2>Bestelde voorgerechten: </h2>" . "<b>Carpaccio van sint-jacobsvruchten met tuinkruiden en limoendressing: </b>" . " " . $_POST["aantal-voorgerecht-1"] .
               "<br><b>Huisgemaakte geitenkaaskroketjes met een fris slaatje: </b>" . $_POST["aantal-voorgerecht-2"] .
               "<br><b>Vers geplukte lenteblaadjes met gevulde zalmbonbon: </b>" . $_POST["aantal-voorgerecht-3"] .
