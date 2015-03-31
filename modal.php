@@ -7,7 +7,13 @@
         <h4 class="modal-title" id="myModalLabel">Overzicht</h4>
       </div>
       <div class="modal-body">
-
+        <div class="userdata">
+          <h4>Persoonlijke gegevens</h4>
+        </div>
+        <hr>
+        <div class="bestellingeten">
+          <h4>Bestelling</h4>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
