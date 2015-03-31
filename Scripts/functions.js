@@ -2,7 +2,9 @@ function Overzicht() {
   var datastring = $('form.form-horizontal').serializeArray();
 
   $.each(datastring, function(i, value) {
-    $('.modal-body').append("<b>" + value.name + "</b>: " + value.value + "<br>");
+    if(value.value != "") {
+      $('.modal-body').append("<b>" + value.name + "</b>: " + value.value + "<br>");
+    }
   });
 
   //$(".modal-body").text(datastring);
