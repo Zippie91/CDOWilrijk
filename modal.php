@@ -14,7 +14,7 @@
               <label>Naam: </label>
             </div>
             <div class="col-xs-9">
-              <span class="voornaam"></span> <span class="naam"></span>
+              <span class="makeempty voornaam"></span> <span class="makeempty naam"></span>
             </div>
           </div>
           <div class="row">
@@ -22,7 +22,7 @@
               <label>Email: </label>
             </div>
             <div class="col-xs-9">
-              <span class="email"></span>
+              <span class="makeempty email"></span>
             </div>
           </div>
           <div class="row">
@@ -30,7 +30,7 @@
               <label>Telefoon: </label>
             </div>
             <div class="col-xs-9">
-              <span class="tel"></span><br>
+              <span class="makeempty tel"></span>
             </div>
           </div>
           <div class="row">
@@ -38,7 +38,7 @@
               <label>Adres: </label>
             </div>
             <div class="col-xs-9">
-              <span class="adres"></span> <span class="nummer"></span><span class="bus"></span>
+              <span class="makeempty adres"></span> <span class="makeempty nummer"></span><span class="makeempty bus"></span>
             </div>
           </div>
           <div class="row">
@@ -46,7 +46,30 @@
               &nbsp;
             </div>
             <div class="col-xs-9">
-              <span class="postcode"></span> <span class="gemeente"></span>
+              <span class="makeempty postcode"></span> <span class="makeempty gemeente"></span>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+          <div class="row">
+            <div class="col-xs-3">
+              <label>Aantal personen: </label>
+            </div>
+            <div class="col-xs-3">
+              <span class="makeempty aantal_personen"></span>
+            </div>
+            <div class="col-xs-3">
+              <label>Tijdstip: </label>
+            </div>
+            <div class="col-xs-3">
+              <span class="makeempty tijdstip"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3">
+              <label>Betalingswijze: </label>
+            </div>
+            <div class="col-xs-9">
+              <span class="makeempty betaling"></span>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ function Overzicht() {
   var bestellingeten = new Array();
 
   var datastring = $('form.form-horizontal').serializeArray();
-  //$(".modal-body").text("");
+  $('.makeempty').empty();
 
   $.each(datastring, function(i, value) {
     if(value.value != "") {
@@ -24,41 +24,41 @@ function Overzicht() {
         $('span.naam').append(value.value);
         break;
       case "email":
+        $('span.email').append(value.value);
         break;
       case "tel":
+        $('span.tel').append(value.value);
         break;
       case "adres":
+        $('span.adres').append(value.value);
         break;
       case "nummer":
+        $('span.nummer').append(value.value);
         break;
       case "bus":
+        $('span.bus').append("/" + value.value);
         break;
       case "gemeente":
+        $('span.gemeente').append(value.value);
         break;
       case "postcode":
+        $('span.postcode').append(value.value);
         break;
       case "aantal_personen":
+        $('span.aantal_personen').append(value.value);
         break;
       case "tijdstip":
+        $('span.tijdstip').append(value.value);
         break;
       case "betaling":
+        $('span.betaling').append(value.value);
         break;
       default:
         break;
     }
-
-    $('.userdata').append(value.name + " : " + value.value + "<br>");
   });
 
   $.each(bestellingeten, function(i, value) {
     $('.bestellingeten').append(value.name + " : " + value.value + "<br>");
   });
-
-  /*
-  $.each(datastring, function(i, value) {
-    if(value.value != "") {
-      $('.modal-body').append("<b>" + value.name + "</b>: " + value.value + "<br>");
-    }
-  });
-  */
 }
