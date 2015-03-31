@@ -39,7 +39,7 @@
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="Scripts/functions.js"></script>
-	  <?php include("Scripts/functions.php"); ?>
+    <?php include("Scripts/functions.php"); ?>
     <script src="Scripts/application.js"></script>
   </body>
 </html>

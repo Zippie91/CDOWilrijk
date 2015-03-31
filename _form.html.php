@@ -1,5 +1,5 @@
 <a name="form"></a>
-<form id="bestellingform" class="form-horizontal" action="" method="POST">
+<form id="bestellingform" class="form-horizontal" action="form_function.php" method="POST">
   <legend>Persoonlijke gegevens</legend>
   <div class="form-group">
     <label for="voornaam" class="control-label col-xs-2">Voornaam</label>
@@ -246,7 +246,7 @@
 	<span class="panel-title"><b>Totaal:</b></span>
 	</div>
 	<div class="panel-body">
-	<span id="totaal">€ 0.00</span>
+	<span id="totaal" name="totaal">€ 0.00</span>
 	</div>
   </div>
   <div class="form_group">
@@ -260,7 +260,7 @@
         <label><input type="radio" name="betaling" value="Overschrijving">Overschrijving</label>
       </div>
     </div>
-	  <input id="hiddentotaal" type="hidden">
+	  <input id="hiddentotaal" type="hidden" name="totaal" value="0">
     <button id="bestel" type="button" class="btn btn-success col-xs-12" data-toggle="modal" data-target="#myModal">Bestellen</button>
     <br>
     <?php include("modal.php"); ?>
