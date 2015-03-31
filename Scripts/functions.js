@@ -1,6 +1,8 @@
 function Overzicht() {
   var datastring = $('form.form-horizontal').serializeArray();
 
+  $(".modal-body").text("");
+
   $.each(datastring, function(i, value) {
     if(value.value != "") {
       $('.modal-body').append("<b>" + value.name + "</b>: " + value.value + "<br>");
