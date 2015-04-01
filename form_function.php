@@ -30,29 +30,70 @@
       //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
       $mail->isSMTP();                                      // Set mailer to use SMTP
-      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+      $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
       $mail->SMTPAuth = true;                               // Enable SMTP authentication
       $mail->Username = 'yannicktest.test@gmail.com';                 // SMTP username
-      $mail->Password = '';                           // SMTP password
+      $mail->Password = 'cdowilrijk123';                           // SMTP password
       $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
       $mail->Port = 465;                                    // TCP port to connect to
 
       $mail->From = 'from@example.com';
       $mail->FromName = $_POST["email"];
       $mail->addAddress('yannicktest.test@gmail.com', 'Yannick');     // Add a recipient
-      $mail->addAddress('');               // Name is optional
-      $mail->addReplyTo('info@example.com', 'Information');
 
       $mail->isHTML(true);                                  // Set email format to HTML
 
       //fill soup variable
 
-      $soep = "<h2>Bestelde soepen<hr></h2> <br>";
+      $soep = "<h2>Bestelde soepen:<hr></h2> <br>";
       for ($i = 1; $i <= 3; $i++) {
       if (isset($_POST["aantal-soep-$i"]) && $_POST["aantal-soep-$i"] != "" && $_POST["aantal-soep-$i"]!= 0) {
         $soep .= $soepen[$i-1]["gerecht"] . ": " . $_POST["aantal-soep-$i"] . "<br>";
         }
       }
+
+      $voorgerecht = "<h2>Bestelde voorgerechten:<hr></h2> <br>";
+      for ($i = 1; $i <= 3; $i++) {
+      if (isset($_POST["aantal-voorgerecht-$i"]) && $_POST["aantal-voorgerecht-$i"] != "" && $_POST["aantal-voorgerecht-$i"]!= 0) {
+        $voorgerecht .= $voorgerechten[$i-1]["gerecht"] . ": " . $_POST["aantal-voorgerecht-$i"] . "<br>";
+        }
+      }
+
+      $hoofdgerecht = "<h2>Bestelde hoofdgerechten:<hr></h2> <br>";
+      for ($i = 1; $i <= 4; $i++) {
+      if (isset($_POST["aantal-hoofdgerecht-$i"]) && $_POST["aantal-hoofdgerecht-$i"] != "" && $_POST["aantal-hoofdgerecht-$i"]!= 0) {
+        $hoofdgerecht .= $hoofdgerechten[$i-1]["gerecht"] . ": " . $_POST["aantal-hoofdgerecht-$i"] . "<br>";
+        }
+      }
+
+      $kindermenus = "<h2>Bestelde kindermenus:<hr></h2> <br>";
+      for ($i = 1; $i <= 1; $i++) {
+      if (isset($_POST["aantal-kindermenu-$i"]) && $_POST["aantal-kindermenu-$i"] != "" && $_POST["aantal-kindermenu-$i"]!= 0) {
+        $kindermenus .= $kindermenu[$i-1]["gerecht"] . ": " . $_POST["aantal-kindermenu-$i"] . "<br>";
+        }
+      }
+
+      $pastas = "<h2>Bestelde pastas:<hr></h2> <br>";
+      for ($i = 1; $i <= 3; $i++) {
+      if (isset($_POST["aantal-pasta-$i"]) && $_POST["aantal-pasta-$i"] != "" && $_POST["aantal-pasta-$i"]!= 0) {
+        $pastas .= $pasta[$i-1]["gerecht"] . ": " . $_POST["aantal-pasta-$i"] . "<br>";
+        }
+      }
+
+      $maaltijdsalade = "<h2>Bestelde maaltijdsalades:<hr></h2> <br>";
+      for ($i = 1; $i <= 4; $i++) {
+      if (isset($_POST["aantal-maaltijdsalades-$i"]) && $_POST["aantal-maaltijdsalades-$i"] != "" && $_POST["aantal-maaltijdsalades-$i"]!= 0) {
+        $maaltijdsalade .= $maaltijdsalades[$i-1]["gerecht"] . ": " . $_POST["aantal-maaltijdsalades-$i"] . "<br>";
+        }
+      }
+
+      $dessert = "<h2>Bestelde desserts:<hr></h2> <br>";
+      for ($i = 1; $i <= 3; $i++) {
+      if (isset($_POST["aantal-desserts-$i"]) && $_POST["aantal-desserts-$i"] != "" && $_POST["aantal-desserts-$i"]!= 0) {
+        $dessert .= $desserts[$i-1]["gerecht"] . ": " . $_POST["aantal-desserts-$i"] . "<br>";
+        }
+      }
+
       $body = "<h2>Persoonlijke Gegevens<hr> </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
               "<br><b>Adres: </b>" . $_POST["adres"] . " " . $_POST["nummer"] . " / " . $_POST["bus"] .
               "<br><b>           </b>" . $_POST["postcode"] . " " . $_POST["gemeente"] .
@@ -60,12 +101,19 @@
 
               "<br><h2>Aantal Personen en Tijdstip<hr> </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] . "<br>" .
 
-              $soep .
+              $soep . "<br>" .
+              $voorgerecht . "<br>" .
+              $hoofdgerecht . "<br>" .
+              $kindermenus . "<br>" .
+              $pastas . "<br>" .
+              $maaltijdsalade . "<br>" .
+              $dessert . "<br>";
+
 /*
               "<br><h2>Bestelde soepen: </h2>" . "<b>Wortel/kokossoepje met curry en koriander: </b>" . " " . $_POST["aantal-soep-1"] .
               "<br><b>Basilicumsoepje met tartaar van mozzarella en tomaat: </b>" . $_POST["aantal-soep-2"] .
               "<br><b>Tomatenvelouté met balletjes: </b>" . $_POST["aantal-soep-3"] .
-*/
+
               "<br><h2>Bestelde voorgerechten: </h2>" . "<b>Carpaccio van sint-jacobsvruchten met tuinkruiden en limoendressing: </b>" . " " . $_POST["aantal-voorgerecht-1"] .
               "<br><b>Huisgemaakte geitenkaaskroketjes met een fris slaatje: </b>" . $_POST["aantal-voorgerecht-2"] .
               "<br><b>Vers geplukte lenteblaadjes met gevulde zalmbonbon: </b>" . $_POST["aantal-voorgerecht-3"] .
@@ -93,7 +141,7 @@
               "<hr>" .
 
               "<br><h2>Totaal bedrag: </h2>" . " " . $_POST["totaal"] . "<br><h2>Betalingswijze: </h2>" . " " . $_POST["betaling"];
-
+*/
 
       $mail->Subject = 'Bestelling van' . " " . $_POST["naam"] . " " . $_POST["voornaam"];
       $mail->Body    = $body;
