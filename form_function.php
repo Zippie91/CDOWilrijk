@@ -33,7 +33,7 @@
       $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
       $mail->SMTPAuth = true;                               // Enable SMTP authentication
       $mail->Username = 'yannicktest.test@gmail.com';                 // SMTP username
-      $mail->Password = 'test123456789';                           // SMTP password
+      $mail->Password = '';                           // SMTP password
       $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
       $mail->Port = 465;                                    // TCP port to connect to
 
@@ -47,21 +47,18 @@
 
       //fill soup variable
 
-      $soep = "Bestelde soepen: ";
+      $soep = "<h2>Bestelde soepen<hr></h2> <br>";
       for ($i = 1; $i <= 3; $i++) {
       if (isset($_POST["aantal-soep-$i"]) && $_POST["aantal-soep-$i"] != "" && $_POST["aantal-soep-$i"]!= 0) {
-        echo $soep;
-        echo $_POST["aantal-soep-$i"];
-        echo $i;
-        $soep .= $soepen[$i-1]["gerecht"] . " " . $_POST["aantal-soep-$i"];
+        $soep .= $soepen[$i-1]["gerecht"] . ": " . $_POST["aantal-soep-$i"] . "<br>";
         }
       }
-      $body = "<h2>Persoonlijke Gegevens: </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
+      $body = "<h2>Persoonlijke Gegevens<hr> </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
               "<br><b>Adres: </b>" . $_POST["adres"] . " " . $_POST["nummer"] . " / " . $_POST["bus"] .
               "<br><b>           </b>" . $_POST["postcode"] . " " . $_POST["gemeente"] .
-              "<br><b>E-mail: </b>" . $_POST["email"] . " " . "<b>Tel.</b>" . " " . $_POST["tel"] .
+              "<br><b>E-mail: </b>" . $_POST["email"] . " " . "<br><b>Tel.</b>" . " " . $_POST["tel"] .
 
-              "<br><h2>Aantal Personen en Tijdstip: </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] .
+              "<br><h2>Aantal Personen en Tijdstip<hr> </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] . "<br>" .
 
               $soep .
 /*
