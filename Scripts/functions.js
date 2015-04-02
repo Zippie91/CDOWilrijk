@@ -94,6 +94,8 @@ function Overzicht() {
         break;
     }
   });
+  var totaalprijs = parseInt($('#hiddentotaal').val());
+  $('span.bestellingtotaal').text('€ ' + totaalprijs.toFixed(2));
 }
 
 function MakeHeader(type) {
@@ -105,8 +107,6 @@ function MakeHeader(type) {
     } else if(type == children[i].innerHTML) {
       count = -1;
       break;
-    } else {
-      count++;
     }
   }
 
@@ -116,14 +116,15 @@ function MakeHeader(type) {
 }
 
 function FillOrder(type, number, amount) {
+  var gerecht = FindDish(type, (number - 1));
   var headers = $('.bestellingeten').children('H4');
-  var label = "<label>" + FindDish(type, (number - 1)) + "</label>";
-
+  var label = "<label>" + gerecht[0] + "</label>";
+  var totaalprijs = gerecht[1] * amount;
 
   for(i = 0; i < headers.length; i++) {
     if(headers[i].innerHTML == type) {
       if(amount != 0) {
-        $(headers[i]).last().after("<div class='row'><div class='col-xs-8'>" + label + "</div><div class='col-xs-4'>" + amount + "</div></div>");
+        $(headers[i]).last().after("<div class='row'><div class='col-xs-8'>" + label + "</div><div class='col-xs-1'>" + amount + "</div><div class='col-xs-3'>€ " + totaalprijs.toFixed(2) + "</div></div>");
       }
     }
   }
@@ -146,4 +147,8 @@ function FindDish(disharray, number) {
     case 'Desserts':
       return desserts[number];
   }
+}
+
+function Find(dish, amount) {
+
 }

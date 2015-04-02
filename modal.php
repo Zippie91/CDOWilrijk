@@ -78,6 +78,15 @@
         <div class="makeempty bestellingeten">
 
         </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-9">
+            <label>Totaal:</label>
+          </div>
+          <div class="col-xs-3">
+            <span class="bestellingtotaal"></span>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>

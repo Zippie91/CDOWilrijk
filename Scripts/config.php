@@ -9,36 +9,43 @@
 
   <?php for($i = 0; $i < sizeof($soepen); $i++) { ?>
       var gerechtnaam = "<?php echo $soepen[$i]["gerecht"]; ?>";
-      soepen.push(gerechtnaam);
+      var gerechtprijs = "<?php echo $soepen[$i]["prijs"]; ?>";
+      soepen.push([gerechtnaam, gerechtprijs]);
   <?php } ?>
 
   <?php for($i = 0; $i < sizeof($voorgerechten); $i++) { ?>
       var gerechtnaam = "<?php echo $voorgerechten[$i]["gerecht"]; ?>";
-      voorgerechten.push(gerechtnaam);
+      var gerechtprijs = "<?php echo $voorgerechten[$i]["prijs"]; ?>";
+      voorgerechten.push([gerechtnaam, gerechtprijs]);
   <?php } ?>
 
   <?php for($i = 0; $i < sizeof($hoofdgerechten); $i++) { ?>
       var gerechtnaam = "<?php echo $hoofdgerechten[$i]["gerecht"]; ?>";
-      hoofdgerechten.push(gerechtnaam);
+      var gerechtprijs = "<?php echo $hoofdgerechten[$i]["prijs"]; ?>";
+      hoofdgerechten.push([gerechtnaam, gerechtprijs]);
   <?php } ?>
 
   <?php for($i = 0; $i < sizeof($kindermenu); $i++) { ?>
       var gerechtnaam = "<?php echo $kindermenu[$i]["gerecht"]; ?>";
-      kindermenu.push(gerechtnaam);
+      var gerechtprijs = "<?php echo $kindermenu[$i]["prijs"]; ?>";
+      kindermenu.push([gerechtnaam, gerechtprijs]);
   <?php } ?>
 
   <?php for($i = 0; $i < sizeof($pasta); $i++) { ?>
       var gerechtnaam = "<?php echo $pasta[$i]["gerecht"]; ?>";
-      pasta.push(gerechtnaam);
+      var gerechtprijs = "<?php echo $pasta[$i]["prijs"]; ?>";
+      pasta.push([gerechtnaam, gerechtprijs]);
   <?php } ?>
 
   <?php for($i = 0; $i < sizeof($maaltijdsalades); $i++) { ?>
       var gerechtnaam = "<?php echo $maaltijdsalades[$i]["gerecht"]; ?>";
-      maaltijdsalades.push(gerechtnaam);
+      var gerechtprijs = "<?php echo $maaltijdsalades[$i]["prijs"]; ?>";
+      maaltijdsalades.push([gerechtnaam, gerechtprijs]);
   <?php } ?>
 
   <?php for($i = 0; $i < sizeof($desserts); $i++) { ?>
       var gerechtnaam = "<?php echo $desserts[$i]["gerecht"]; ?>";
-      desserts.push(gerechtnaam);
+      var gerechtprijs = "<?php echo $desserts[$i]["prijs"]; ?>";
+      desserts.push([gerechtnaam, gerechtprijs]);
   <?php } ?>
 </script>
