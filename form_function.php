@@ -23,6 +23,7 @@
         <p class="lead">U ontvangt binnenkort een definitieve bevestiging van uw bestelling.</p>
       </div>
       <?php
+      /*
       require 'PHPMailer/PHPMailerAutoload.php';
 
       $mail = new PHPMailer;
@@ -186,7 +187,9 @@
       } else {
           echo ' ';
       }
+      */
 
+      include('mail.php');
       ?>
     </div>
   </body>
