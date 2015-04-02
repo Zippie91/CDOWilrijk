@@ -87,7 +87,7 @@ $body = "<h2>Persoonlijke Gegevens<hr> </h2>" . "<b>Naam: </b>" . " " . $_POST["
         $pastas .
         $maaltijdsalade .
         $dessert .
-        "<hr>" . "<hr>" .
+        "<hr>" .
         $totaal;
 
 $to = strip_tags($_POST['email']);
@@ -99,66 +99,6 @@ $headers .= "Cc: " . strip_tags($recipient) . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-mail($to, $subject, BuildMailBody(), $headers);
+mail($to, $subject, $body, $headers);
 
 ?>
-
-
-<?php function BuildMailBody() {
-  $body = "<h2>Persoonlijke gegevens</h2>" .
-          "<table style='border:none;'>" .
-            "<tr>" .
-              "<td><b>Naam:</b></td>" .
-              "<td>" . $_POST['voornaam'] . " " . $_POST['naam'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Email:</b></td>" .
-              "<td>" . $_POST['email'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Telefoon:</b></td>" .
-              "<td>" . $_POST['tel'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Adres:</b></td>" .
-              "<td>" . $_POST['adres'] . " " . $_POST['nummer'] .
-              if($_POST['bus'] != "") {
-                " / " . $_POST['bus'] .
-              }
-              "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td>&nbsp;</td>" .
-              "<td>" . $_POST['postcode'] . " " . $_POST['gemeente'] . "</td>" .
-            "</tr>" .
-          "</table>" .
-          "<h2>Aantal personen en tijdstip</h2>" .
-          "<table style='border:none;'>" .
-            "<tr>" .
-              "<td><b>Aantal personen:</b></td>" .
-              "<td>" . $_POST['aantal_personen'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Tijdstip:</b></td>" .
-              "<td>" . $_POST['tijdstip'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Betalingswijze:</b></td>" .
-              "<td>" . $_POST['betaling'] . "</td>" .
-            "</tr>" .
-          "</table>" .
-          "<h2>Bestelling</h2>" .
-          "<table style='border: none;'>" .
-            "<tr>" .
-              "<td><b>Tomatensoep met balletjes:</b></td>" .
-              "<td>2</td>" .
-            "</tr>" .
-            "<tr><td>&nbsp;</td></tr>" .
-            "<tr>" .
-              "<td><b>Totaal:</b></td>" .
-              "<td>&euro; 20.00</td>" .
-            "</tr>" .
-          "</table>";
-
-  return $body;
-}
