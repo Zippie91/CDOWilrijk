@@ -26,6 +26,15 @@
 
       $recipient = 'yannick.anckaer@gmail.com';
 
+      $to = strip_tags($_POST['email']);
+      $subject = 'Bestelling van' . " " . $_POST["naam"] . " " . $_POST["voornaam"];
+
+      $headers = "From: " . strip_tags($recipient) . "\r\n";
+      $headers .= "Reply-To: ". strip_tags($recipient) . "\r\n";
+      $headers .= "Cc: " . strip_tags($recipient) . "\r\n";
+      $headers .= "MIME-Version: 1.0\r\n";
+      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
       $soep = "";
       for ($i = 1; $i <= 3; $i++) {
       if (isset($_POST["aantal-soep-$i"]) && $_POST["aantal-soep-$i"] != "" && $_POST["aantal-soep-$i"]!= 0) {
@@ -115,16 +124,7 @@
               "<hr>" .
               $totaal;
 
-
-      $mail->Subject = 'Bestelling van' . " " . $_POST["naam"] . " " . $_POST["voornaam"];
-      $mail->Body    = $body;
-
-      if(!$mail->send()) {
-          echo 'Uw mail kon niet verzonden worden. Contacteer de Admin.';
-      } else {
-          echo ' ';
-      }
-
+      mail($to, $subject, $body, $headers);
       ?>
     </div>
   </body>
