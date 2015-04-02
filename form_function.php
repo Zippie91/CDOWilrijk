@@ -20,7 +20,7 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Bedankt voor uw bestelling!</h1>
-        <p class="lead">U ontvangt binnenkort een definitieve bevestiging van uw bestelling.</p>
+        <p class="lead">U ontvangt direct een mail met een overzicht van uw bestelling.<br>Na verwerking wordt uw bestelling nog eens bevestigd met juiste uur en betalingsgegevens.</p>
       </div>
       <?php
       /*
