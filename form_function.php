@@ -143,6 +143,53 @@
       }
 
       ?>
+      <?php //mail naar besteller
+      $mail = new PHPMailer;
+
+      //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+      $mail->isSMTP();                                      // Set mailer to use SMTP
+      $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                               // Enable SMTP authentication
+      $mail->Username = 'yannicktest.test@gmail.com';                 // SMTP username
+      $mail->Password = 'cdowilrijk123456789';                           // SMTP password
+      $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 465;                                    // TCP port to connect to
+
+      $mail->FromName = $_POST["email"];
+      $mail->addAddress('yannicktest.test@gmail.com', 'Yannick');     // Add a recipient
+
+      $mail->isHTML(true);                                  // Set email format to HTML
+
+      $body = "<h2>Persoonlijke Gegevens<hr> </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
+              "<br><b>Adres: </b>" . $_POST["adres"] . " " . $_POST["nummer"] . " / " . $_POST["bus"] .
+              "<br><b>           </b>" . $_POST["postcode"] . " " . $_POST["gemeente"] .
+              "<br><b>E-mail: </b>" . $_POST["email"] . " " . "<br><b>Tel.</b>" . " " . $_POST["tel"] .
+
+              "<br><h2>Aantal Personen en Tijdstip<hr> </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] . "<br>" .
+
+              $soep . "<br>" .
+              $voorgerecht . "<br>" .
+              $hoofdgerecht . "<br>" .
+              $kindermenus . "<br>" .
+              $pastas . "<br>" .
+              $maaltijdsalade . "<br>" .
+              $dessert . "<br>" .
+              "<hr>" . "<hr>" .
+              $totaal;
+
+
+      $mail->Subject = 'Overzicht van uw bestelling';
+      $mail->Body    = $body;
+
+      if(!$mail->send()) {
+          echo 'Message could not be sent.';
+          echo 'Mailer Error: ' . $mail->ErrorInfo;
+      } else {
+          echo ' ';
+      }
+
+      ?>
     </div>
   </body>
 </html>
