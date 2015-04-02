@@ -94,7 +94,7 @@ function Overzicht() {
         break;
     }
   });
-  var totaalprijs = parseInt($('#hiddentotaal').val());
+  var totaalprijs = parseFloat($('#hiddentotaal').val());
   $('span.bestellingtotaal').text('€ ' + totaalprijs.toFixed(2));
 }
 

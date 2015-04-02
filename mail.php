@@ -1,5 +1,5 @@
 <?php
-$recipient = 'rafsmits@gmail.com';
+$recipient = 'lekker_eten@donboscowilrijk.be';
 
 $soep = "";
 for ($i = 1; $i <= 3; $i++) {
@@ -8,7 +8,7 @@ if (isset($_POST["aantal-soep-$i"]) && $_POST["aantal-soep-$i"] != "" && $_POST[
   }
 }
 if ($soep != "") {
-  $soep = "<h2>Bestelde soepen:<hr></h2> <br>" . $soep . "<br>";
+  $soep = "<h3>Bestelde soepen:<hr></h3>" . $soep . "<br>";
 }
 
 $voorgerecht = "";
@@ -18,7 +18,7 @@ if (isset($_POST["aantal-voorgerecht-$i"]) && $_POST["aantal-voorgerecht-$i"] !=
   }
 }
 if ($voorgerecht != "") {
-  $voorgerecht = "<h2>Bestelde voorgerechten:<hr></h2> <br>" . $voorgerecht . "<br>";
+  $voorgerecht = "<h3>Bestelde voorgerechten:<hr></h3>" . $voorgerecht . "<br>";
 }
 
 $hoofdgerecht = "";
@@ -28,7 +28,7 @@ if (isset($_POST["aantal-hoofdgerecht-$i"]) && $_POST["aantal-hoofdgerecht-$i"] 
   }
 }
 if ($hoofdgerecht != "") {
-  $hoofdgerecht = "<h2>Bestelde hoofdgerechten:<hr></h2> <br>" . $hoofdgerecht . "<br>";
+  $hoofdgerecht = "<h3>Bestelde hoofdgerechten:<hr></h3>" . $hoofdgerecht . "<br>";
 }
 
 $kindermenus = "";
@@ -38,7 +38,7 @@ if (isset($_POST["aantal-kindermenu-$i"]) && $_POST["aantal-kindermenu-$i"] != "
   }
 }
 if ($kindermenus != "") {
-  $kindermenus = "<h2><h2>Bestelde kindermenus:<hr></h2> <br>" . $kindermenus . "<br>";
+  $kindermenus = "<h3>Bestelde kindermenus:<hr></h3>" . $kindermenus . "<br>";
 }
 
 $pastas = "";
@@ -48,7 +48,7 @@ if (isset($_POST["aantal-pasta-$i"]) && $_POST["aantal-pasta-$i"] != "" && $_POS
   }
 }
 if ($pastas != "") {
-  $pastas = "<h2>Bestelde pastas:<hr></h2> <br>" . $pastas . "<br>";
+  $pastas = "<h3>Bestelde pastas:<hr></h3>" . $pastas . "<br>";
 }
 
 $maaltijdsalade = "";
@@ -58,7 +58,7 @@ if (isset($_POST["aantal-maaltijdsalades-$i"]) && $_POST["aantal-maaltijdsalades
   }
 }
 if ($maaltijdsalade != "") {
-  $maaltijdsalade = "<h2>Bestelde maaltijdsalades:<hr></h2> <br>" . $maaltijdsalades . "<br>";
+  $maaltijdsalade = "<h3>Bestelde maaltijdsalades:<hr></h3>" . $maaltijdsalades . "<br>";
 }
 
 $dessert = "";
@@ -68,27 +68,57 @@ if (isset($_POST["aantal-desserts-$i"]) && $_POST["aantal-desserts-$i"] != "" &&
   }
 }
 if ($dessert != "") {
-  $dessert = "<h2>Bestelde desserts:<hr></h2> <br>" . $dessert . "<br>";
+  $dessert = "<h3>Bestelde desserts:<hr></h3>" . $dessert . "<br>";
 }
 
-$totaal = "<b>Totaal: </b>"  . " &#8364; " . number_format((float)$_POST["totaal"], 2, '.', '');
+$totaal = "<b>Totaal: </b>"  . " € " . number_format((float)$_POST["totaal"], 2, '.', '');
 
-$body = "<h2>Persoonlijke Gegevens<hr> </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
-        "<br><b>Adres: </b>" . $_POST["adres"] . " " . $_POST["nummer"] . " / " . $_POST["bus"] .
-        "<br><b>           </b>" . $_POST["postcode"] . " " . $_POST["gemeente"] .
-        "<br><b>E-mail: </b>" . $_POST["email"] . " " . "<br><b>Tel.</b>" . " " . $_POST["tel"] .
+$body = "<h2>Persoonlijke gegevens</h2>" .
+        "<table style='border:none;'>" .
+          "<tr>" .
+            "<td><b>Naam:</b></td>" .
+            "<td>" . $_POST['voornaam'] . " " . $_POST['naam'] . "</td>" .
+          "</tr>" .
+          "<tr>" .
+            "<td><b>Email:</b></td>" .
+            "<td>" . $_POST['email'] . "</td>" .
+          "</tr>" .
+          "<tr>" .
+            "<td><b>Telefoon:</b></td>" .
+            "<td>" . $_POST['tel'] . "</td>" .
+          "</tr>" .
+          "<tr>" .
+            "<td><b>Adres:</b></td>" .
+            "<td>" . $_POST['adres'] . " " . $_POST['nummer'];
+if($_POST['bus'] != "") {
+  $body .= " / " . $_POST['bus'];
+}
 
-        "<br><h2>Aantal Personen en Tijdstip<hr> </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] . "<br>" .
+$body .=     "</td>" .
+          "</tr>" .
+          "<tr>" .
+            "<td>&nbsp;</td>" .
+            "<td>" . $_POST['postcode'] . " " . $_POST['gemeente'] . "</td>" .
+          "</tr>" .
+        "</table>" .
+        "<h2>Aantal personen en tijdstip</h2>" .
+        "<table style='border:none;'>" .
+          "<tr>" .
+            "<td><b>Aantal personen:</b></td>" .
+            "<td>" . $_POST['aantal_personen'] . "</td>" .
+          "</tr>" .
+          "<tr>" .
+            "<td><b>Tijdstip:</b></td>" .
+            "<td>" . $_POST['tijdstip'] . "</td>" .
+          "</tr>" .
+          "<tr>" .
+            "<td><b>Betalingswijze:</b></td>" .
+            "<td>" . $_POST['betaling'] . "</td>" .
+          "</tr>" .
+        "</table>";
+  $body .= $soep . $voorgerecht . $hoofdgerecht . $kindermenu . $pasta . $maaltijdsalade . $dessert;
+  $body .=   "<hr>" . $totaal;
 
-        $soep .
-        $voorgerecht .
-        $hoofdgerecht .
-        $kindermenus .
-        $pastas .
-        $maaltijdsalade .
-        $dessert .
-        "<hr>" . "<hr>" .
-        $totaal;
 
 $to = strip_tags($_POST['email']);
 $subject = 'Bestelling van' . " " . $_POST["naam"] . " " . $_POST["voornaam"];
@@ -99,68 +129,6 @@ $headers .= "Cc: " . strip_tags($recipient) . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-mail($to, $subject, BuildMailBody(), $headers);
+mail($to, $subject, $body, $headers);
 
 ?>
-
-
-<?php function BuildMailBody() {
-  $body = "<h2>Persoonlijke gegevens</h2>" .
-          "<table style='border:none;'>" .
-            "<tr>" .
-              "<td><b>Naam:</b></td>" .
-              "<td>" . $_POST['voornaam'] . " " . $_POST['naam'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Email:</b></td>" .
-              "<td>" . $_POST['email'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Telefoon:</b></td>" .
-              "<td>" . $_POST['tel'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Adres:</b></td>" .
-              "<td>" . $_POST['adres'] . " " . $_POST['nummer'];
-  if($_POST['bus'] != "") {
-    $body .= " / " . $_POST['bus'];
-  }
-
-
-  $body .=     "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td>&nbsp;</td>" .
-              "<td>" . $_POST['postcode'] . " " . $_POST['gemeente'] . "</td>" .
-            "</tr>" .
-          "</table>" .
-          "<h2>Aantal personen en tijdstip</h2>" .
-          "<table style='border:none;'>" .
-            "<tr>" .
-              "<td><b>Aantal personen:</b></td>" .
-              "<td>" . $_POST['aantal_personen'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Tijdstip:</b></td>" .
-              "<td>" . $_POST['tijdstip'] . "</td>" .
-            "</tr>" .
-            "<tr>" .
-              "<td><b>Betalingswijze:</b></td>" .
-              "<td>" . $_POST['betaling'] . "</td>" .
-            "</tr>" .
-          "</table>" .
-          "<h2>Bestelling</h2>" .
-          "<table style='border: none;'>" .
-            "<tr>" .
-              "<td><b>Tomatensoep met balletjes:</b></td>" .
-              "<td>2</td>" .
-            "</tr>" .
-            "<tr><td>&nbsp;</td></tr>" .
-            "<tr>" .
-              "<td><b>Totaal:</b></td>" .
-              "<td>&euro; 20.00</td>" .
-            "</tr>" .
-          "</table>";
-
-  return $body;
-}
