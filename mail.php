@@ -121,11 +121,13 @@ mail($to, $subject, BuildMailBody(), $headers);
             "</tr>" .
             "<tr>" .
               "<td><b>Adres:</b></td>" .
-              "<td>" . $_POST['adres'] . " " . $_POST['nummer'] .
-              if($_POST['bus'] != "") {
-                " / " . $_POST['bus'] .
-              }
-              "</td>" .
+              "<td>" . $_POST['adres'] . " " . $_POST['nummer'];
+  if($_POST['bus'] != "") {
+    $body .= " / " . $_POST['bus'];
+  }
+
+
+  $body .=     "</td>" .
             "</tr>" .
             "<tr>" .
               "<td>&nbsp;</td>" .
