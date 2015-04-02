@@ -24,7 +24,7 @@
       </div>
       <?php
 
-      $recipient = 'yannick.anckaer@gmail.com';
+      $recipient = 'lekker_eten@donboscowilrijk.be';
 
       $to = strip_tags($_POST['email']);
       $subject = 'Bestelling van' . " " . $_POST["naam"] . " " . $_POST["voornaam"];
@@ -92,7 +92,7 @@
         }
       }
       if ($maaltijdsalade != "") {
-        $maaltijdsalade = "<h2>Bestelde maaltijdsalades:<hr></h2> <br>" . $maaltijdsalades . "<br>";
+        $maaltijdsalade = "<h2>Bestelde maaltijdsalades:<hr></h2> <br>" . $maaltijdsalade . "<br>";
       }
 
       $dessert = "";
@@ -105,11 +105,11 @@
         $dessert = "<h2>Bestelde desserts:<hr></h2> <br>" . $dessert . "<br>";
       }
 
-      $totaal = "<b>Totaal: </b>"  . " € " . number_format((float)$_POST["totaal"], 2, '.', '');
+      $totaal = "<b>Totaal: </b>"  . " &euro; " . number_format((float)$_POST["totaal"], 2, '.', '');
 
-      $body = "<h2>Persoonlijke Gegevens<hr> </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
+      $body = wordwrap("<h2>Persoonlijke Gegevens<hr> </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
               "<br><b>Adres: </b>" . $_POST["adres"] . " " . $_POST["nummer"] . " / " . $_POST["bus"] .
-              "<br><b>           </b>" . $_POST["postcode"] . " " . $_POST["gemeente"] .
+              "<br>" . $_POST["postcode"] . " " . $_POST["gemeente"] .
               "<br><b>E-mail: </b>" . $_POST["email"] . " " . "<br><b>Tel.</b>" . " " . $_POST["tel"] .
 
               "<br><h2>Aantal Personen en Tijdstip<hr> </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] . "<br>" .
@@ -122,7 +122,7 @@
               $maaltijdsalade .
               $dessert .
               "<hr>" .
-              $totaal;
+              $totaal);
 
       mail($to, $subject, $body, $headers);
       ?>
