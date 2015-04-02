@@ -112,6 +112,7 @@
         $dessert = "<h2>Bestelde desserts:<hr></h2> <br>" . $dessert;
       }
 
+      $totaal = "<b>Totaal: </b>"  . " € " . number_format((float)$_POST["totaal"], 2, '.', '');
 
       $body = "<h2>Persoonlijke Gegevens<hr> </h2>" . "<b>Naam: </b>" . " " . $_POST["naam"] . " " . $_POST["voornaam"] .
               "<br><b>Adres: </b>" . $_POST["adres"] . " " . $_POST["nummer"] . " / " . $_POST["bus"] .
@@ -126,7 +127,9 @@
               $kindermenus . "<br>" .
               $pastas . "<br>" .
               $maaltijdsalade . "<br>" .
-              $dessert . "<br>";
+              $dessert . "<br>" .
+              "<hr>" . "<hr>" .
+              $totaal;
 
 
       $mail->Subject = 'Bestelling van' . " " . $_POST["naam"] . " " . $_POST["voornaam"];
