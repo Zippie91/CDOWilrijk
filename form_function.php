@@ -49,7 +49,7 @@
         }
       }
       if ($soep != "") {
-        $soep = "<h2>Bestelde soepen:<hr></h2> <br>" . $soep;
+        $soep = "<h2>Bestelde soepen:<hr></h2> <br>" . $soep . "<br>";
       }
 
       $voorgerecht = "";
@@ -59,7 +59,7 @@
         }
       }
       if ($voorgerecht != "") {
-        $voorgerecht = "<h2>Bestelde voorgerechten:<hr></h2> <br>" . $voorgerecht;
+        $voorgerecht = "<h2>Bestelde voorgerechten:<hr></h2> <br>" . $voorgerecht . "<br>";
       }
 
       $hoofdgerecht = "";
@@ -69,7 +69,7 @@
         }
       }
       if ($hoofdgerecht != "") {
-        $hoofdgerecht = "<h2>Bestelde hoofdgerechten:<hr></h2> <br>" . $hoofdgerecht;
+        $hoofdgerecht = "<h2>Bestelde hoofdgerechten:<hr></h2> <br>" . $hoofdgerecht . "<br>";
       }
 
       $kindermenus = "";
@@ -79,7 +79,7 @@
         }
       }
       if ($kindermenus != "") {
-        $kindermenus = "<h2><h2>Bestelde kindermenus:<hr></h2> <br>" . $kindermenus;
+        $kindermenus = "<h2><h2>Bestelde kindermenus:<hr></h2> <br>" . $kindermenus . "<br>";
       }
 
       $pastas = "";
@@ -89,7 +89,7 @@
         }
       }
       if ($pastas != "") {
-        $pastas = "<h2>Bestelde pastas:<hr></h2> <br>" . $pastas;
+        $pastas = "<h2>Bestelde pastas:<hr></h2> <br>" . $pastas . "<br>";
       }
 
       $maaltijdsalade = "";
@@ -99,7 +99,7 @@
         }
       }
       if ($maaltijdsalade != "") {
-        $maaltijdsalade = "<h2>Bestelde maaltijdsalades:<hr></h2> <br>" . $maaltijdsalades;
+        $maaltijdsalade = "<h2>Bestelde maaltijdsalades:<hr></h2> <br>" . $maaltijdsalades . "<br>";
       }
 
       $dessert = "";
@@ -109,7 +109,7 @@
         }
       }
       if ($dessert != "") {
-        $dessert = "<h2>Bestelde desserts:<hr></h2> <br>" . $dessert;
+        $dessert = "<h2>Bestelde desserts:<hr></h2> <br>" . $dessert . "<br>";
       }
 
       $totaal = "<b>Totaal: </b>"  . " € " . number_format((float)$_POST["totaal"], 2, '.', '');
@@ -121,13 +121,13 @@
 
               "<br><h2>Aantal Personen en Tijdstip<hr> </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] . "<br>" .
 
-              $soep . "<br>" .
-              $voorgerecht . "<br>" .
-              $hoofdgerecht . "<br>" .
-              $kindermenus . "<br>" .
-              $pastas . "<br>" .
-              $maaltijdsalade . "<br>" .
-              $dessert . "<br>" .
+              $soep .
+              $voorgerecht .
+              $hoofdgerecht .
+              $kindermenus .
+              $pastas .
+              $maaltijdsalade .
+              $dessert .
               "<hr>" . "<hr>" .
               $totaal;
 
@@ -136,8 +136,7 @@
       $mail->Body    = $body;
 
       if(!$mail->send()) {
-          echo 'Message could not be sent.';
-          echo 'Mailer Error: ' . $mail->ErrorInfo;
+          echo 'Uw mail kon niet verzonden worden. Contacteer de Admin.';
       } else {
           echo ' ';
       }
@@ -168,13 +167,13 @@
 
               "<br><h2>Aantal Personen en Tijdstip<hr> </h2>" . "<b>Aantal Personen: </b>" . " " . $_POST["aantal_personen"] . "<br>" . "<b>Tijdstip: </b>" . $_POST["tijdstip"] . "<br>" .
 
-              $soep . "<br>" .
-              $voorgerecht . "<br>" .
-              $hoofdgerecht . "<br>" .
-              $kindermenus . "<br>" .
-              $pastas . "<br>" .
-              $maaltijdsalade . "<br>" .
-              $dessert . "<br>" .
+              $soep .
+              $voorgerecht .
+              $hoofdgerecht .
+              $kindermenus .
+              $pastas .
+              $maaltijdsalade .
+              $dessert .
               "<hr>" . "<hr>" .
               $totaal;
 
@@ -183,8 +182,7 @@
       $mail->Body    = $body;
 
       if(!$mail->send()) {
-          echo 'Message could not be sent.';
-          echo 'Mailer Error: ' . $mail->ErrorInfo;
+          echo 'Uw mail kon niet verzonden worden. Contacteer de Admin.';
       } else {
           echo ' ';
       }
