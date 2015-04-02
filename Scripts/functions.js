@@ -18,40 +18,40 @@ function Overzicht() {
   $.each(userdata, function(i, value) {
     switch(value.name) {
       case "voornaam":
-        $('span.voornaam').append(value.value);
+        AppendText("voornaam", value.value);
         break;
       case "naam":
-        $('span.naam').append(value.value);
+        AppendText("naam", value.value);
         break;
       case "email":
-        $('span.email').append(value.value);
+        AppendText("email", value.value);
         break;
       case "tel":
-        $('span.tel').append(value.value);
+        AppendText("tel", value.value);
         break;
       case "adres":
-        $('span.adres').append(value.value);
+        AppendText("adres", value.value);
         break;
       case "nummer":
-        $('span.nummer').append(value.value);
+        AppendText("nummer", value.value);
         break;
       case "bus":
-        $('span.bus').append("/" + value.value);
+        AppendText("bus", " / " + value.value);
         break;
       case "gemeente":
-        $('span.gemeente').append(value.value);
+        AppendText("gemeente", value.value);
         break;
       case "postcode":
-        $('span.postcode').append(value.value);
+        AppendText("postcode", value.value);
         break;
       case "aantal_personen":
-        $('span.aantal_personen').append(value.value);
+        AppendText("aantal_personen", value.value);
         break;
       case "tijdstip":
-        $('span.tijdstip').append(value.value);
+        AppendText("tijdstip", value.value);
         break;
       case "betaling":
-        $('span.betaling').append(value.value);
+        AppendText("betaling", value.value);
         break;
       default:
         break;
@@ -149,6 +149,6 @@ function FindDish(disharray, number) {
   }
 }
 
-function Find(dish, amount) {
-
+function AppendText(name, value) {
+  $("span." + name).append(value);
 }

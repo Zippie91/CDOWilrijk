@@ -11,8 +11,9 @@ $soepen = array(
   array(
     "gerecht" => "Tomatenvelouté met balletjes",
     "prijs" => "3.00"
-  ),
+  )
 );
+
 $voorgerechten = array(
   array(
     "gerecht" => "Carpaccio van sint-jacobsvruchten met tuinkruiden en limoendressing",
@@ -25,8 +26,9 @@ $voorgerechten = array(
   array(
     "gerecht" => "Vers geplukte lenteblaadjes met gevulde zalmbonbon",
     "prijs" => "7.50"
-  ),
+  )
 );
+
 $hoofdgerechten = array(
   array(
     "gerecht" => "Scampi's met appel/ananas/banaan/curry/kokossausje en wilde rijst",
@@ -43,14 +45,16 @@ $hoofdgerechten = array(
   array(
     "gerecht" => "Stoofpotje van rundvlees met trappist en rozijntjes, verse frietjes",
     "prijs" => "10.00"
-  ),
+  )
 );
+
 $kindermenu = array(
   array(
     "gerecht" => "Minihamburger met frietjes",
     "prijs" => "6.50"
-  ),
+  )
 );
+
 $pasta = array(
   array(
     "gerecht" => "Lasagne met gegrilde groenten",
@@ -63,7 +67,7 @@ $pasta = array(
   array(
     "gerecht" => "Tagliatelle met kip 'Hawaï'",
     "prijs" => "7.50"
-  ),
+  )
 );
 $maaltijdsalades = array(
   array(
@@ -81,7 +85,7 @@ $maaltijdsalades = array(
   array(
     "gerecht" => "Verfrissend slaatje met scampi en appel met een currydressing",
     "prijs" => "8.50"
-  ),
+  )
 );
 $desserts = array(
   array(
@@ -95,6 +99,6 @@ $desserts = array(
   array(
     "gerecht" => "Gevarieerd dessertbord 'Keukenrebellen'",
     "prijs" => "6.00"
-  ),
+  )
 );
 ?>

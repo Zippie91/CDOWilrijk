@@ -16,6 +16,6 @@ $(document).ready(function() {
   $('.clickout').click(function() {
     $(this).find('.glyphicon').toggleClass("glyphicon-menu-down glyphicon-menu-up")
   });
-  
-  $('#bestel').click(function() {Overzicht();});
+
+  $('#bestel').click(function() { Overzicht(); });
 });
