@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bedankt! || CDO Don Bosco Wilrijk</title>
+    <title>Don Bosco Wilrijk - Bedankt!</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/jumbotron_narrow.css">
@@ -25,6 +25,9 @@
       <?php
       include('mail2.php');
       ?>
+      <footer class="footer">
+        <p>Website created by Yannick en Raf</p>
+      </footer>
     </div>
   </body>
 </html>

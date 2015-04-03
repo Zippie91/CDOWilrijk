@@ -32,7 +32,7 @@
         <?php include("_form.html.php"); ?>
       </div>
       <footer class="footer">
-        <p>Yannick en Raf</p>
+        <p>Website created by Yannick en Raf</p>
       </footer>
     </div>
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
