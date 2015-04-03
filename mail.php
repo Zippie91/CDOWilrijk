@@ -13,16 +13,16 @@ try {
   $mail->SMTPSecure = "ssl";                                        // sets the prefix to the server
 //$mail->Host       = "smtp.gmail.com";                             // sets GMAIL as the SMTP server
   $mail->Port       = 465;                                          // set the SMTP port for the GMAIL server
-  $mail->Username   = "testyannicktest@gmail.com";                  // GMAIL username
-  $mail->Password   = "yannick123";                                 // GMAIL password
-  $mail->SetFrom('testyannicktest@gmail.com', 'Yannick Test');
-  $mail->AddReplyTo('testyannicktest@gmail.com', 'Yannick Test');
+  $mail->Username   = $gmailaccount;            // GMAIL username
+  $mail->Password   = $password;                                 // GMAIL password
+  $mail->SetFrom($sender, $sendername);
+  $mail->AddReplyTo($sender, $sendername);
   $mail->AddAddress($_POST['email'], ($_POST['voornaam'] . ' ' . $_POST['naam']));
-  $mail->AddBCC('testyannicktest@gmail.com', 'Yannick Test');
+  $mail->AddBCC($sender, $sendername);
   $mail->Subject = 'Bestelling van' . " " . $_POST["voornaam"] . " " . $_POST["naam"];
   $mail->MsgHTML($body);                                            // Get $body from mailbody.php
   $mail->Send();
-  echo '<div class="alert alert-success">Email verzonden!</div>';
+  echo '<div class="alert alert-success">Email verzonden! Als je de email niet aangekregen hebt, <b>kijk dan in je spam-folder of junk mail</b>. <br>Als je hem nog niet vindt, neem dan contact op met Christian Rutges op het nummer 0495/03.75.79.</div>';
 } catch (phpmailerException $e) {
   echo $e->errorMessage(); //Pretty error messages from PHPMailer
 } catch (Exception $e) {

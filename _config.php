@@ -101,4 +101,10 @@ $desserts = array(
     'prijs' => '6.00'
   )
 );
+
+
+$gmailaccount = 'sender.dbowilrijk@gmail.com';
+$password = 'cdowilrijk123456';
+$sendername = 'Lekker eten';
+$sender = 'lekker_eten@donboscowilrijk.be';
 ?>
