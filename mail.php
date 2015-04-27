@@ -10,7 +10,7 @@ try {
   $mail->Host       = 'mail.donboscowilrijk.be';                             // SMTP server
   $mail->SMTPDebug  = 2;                                            // enable SMTP Debug information
   $mail->SMTPAuth   = true;                                         // enable SMTP authentication
-  $mail->SMTPSecure = "ssl";                                        // sets the prefix to the server
+  $mail->SMTPSecure = "tls";                                        // sets the prefix to the server
   $mail->Port       = 465;                                          // set the SMTP port for the GMAIL server
   $mail->Username   = $account;                              // GMAIL username
   $mail->Password   = $password;                                 // GMAIL password
