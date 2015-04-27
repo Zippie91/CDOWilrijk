@@ -7,7 +7,7 @@ $mail = new PHPMailer(true);
 $mail->IsSMTP();
 
 try {
-  $mail->Host       = 'mail.donboscowilrijk.be';                    // SMTP server
+  $mail->Host       = 'smtp.gmail.com';                    // SMTP server
   $mail->SMTPDebug  = 2;                                            // enable SMTP Debug information
   $mail->SMTPAuth   = true;                                         // enable SMTP authentication
   $mail->SMTPSecure = "tls";                                   // sets the prefix to the server

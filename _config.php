@@ -102,10 +102,8 @@ $desserts = array(
   )
 );
 
-$account = 'keuken@donboscowilrijk.be';
-$password = 'Rebel_123';
-//$gmailaccount = 'sender.dbowilrijk@gmail.com';
-//$password = 'cdowilrijk123456';
+$account = 'sender.dbowilrijk@gmail.com';
+$password = 'cdowilrijk123456';
 $sendername = 'Lekker eten';
-$sender = 'keuken@donboscowilrijk.be';
+$sender = 'raf_smits@hotmail.com';
 ?>
