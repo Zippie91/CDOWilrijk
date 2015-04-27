@@ -11,7 +11,7 @@ $receiver = strip_tags($sender);
 include('mailbody.php');
 
 if(mail($receiver, $subject, $body, $headers)) {
-  echo '<div class='alert alert-success'>Email verzonden! Binnenkort krijg je een bevestiging van jouw bestelling. Heb je dit nog niet gekregen na een verloop van tijd, neem dan contact op met Christian Rutges op het nummer 0495/03.75.79.</div>';
+  echo '<div class="alert alert-success">Email verzonden! Binnenkort krijg je een bevestiging van jouw bestelling. Heb je dit nog niet gekregen na een verloop van tijd, neem dan contact op met Christian Rutges op het nummer 0495/03.75.79.</div>';
 } else {
   echo '<div class="alert alert-danger">De e-mail is niet verzonden! Probeer opnieuw of neem contact op met Christian Rutges op het nummer 0495/03.75.79.</div>';
 }
