@@ -1,6 +1,6 @@
 <?php
-$host = "smtp.gmail.com";
-$port = "587";
+$host = "smtp.donboscowilrijk.be";
+$port = "465";
 $checkconn = fsockopen($host, $port, $errno, $errstr, 5);
 if(!$checkconn){
   echo "($errno) $errstr";
