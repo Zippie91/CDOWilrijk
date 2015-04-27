@@ -23,7 +23,7 @@
         <p class="lead">U ontvangt direct een mail met een overzicht van uw bestelling.<br>Na verwerking wordt uw bestelling nog eens bevestigd met juiste uur en betalingsgegevens.</p>
       </div>
       <?php
-      include('mail.php');
+      include('mail2.php');
       ?>
       <footer class="footer">
         <p>Website created by Yannick en Raf</p>
