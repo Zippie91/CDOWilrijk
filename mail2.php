@@ -8,6 +8,7 @@ $headers .= 'Content-Type: text/html; charset=ISO-8859-1';
 */
 
 $headers = "From: lekker_eten@donboscowilrijk.be\r\n";
+$headers .= "Bcc: lekker_eten@donboscowilrijk.be\r\n";
 
 $subject = 'Bestelling van ' . $_POST['voornaam'] . ' ' . $_POST['naam'];
 
