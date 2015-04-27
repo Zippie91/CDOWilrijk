@@ -1,5 +1,5 @@
 <?php
-include('mailbody.php');
+//include('mailbody.php');
 
 $headers = "From: " . strip_tags($sender) . "\r\n";
 $headers .= "Bcc: " . strip_tags($sender) . "\r\n";
