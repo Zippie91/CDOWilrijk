@@ -107,5 +107,5 @@ $password = 'Rebel_123';
 //$gmailaccount = 'sender.dbowilrijk@gmail.com';
 //$password = 'cdowilrijk123456';
 $sendername = 'Lekker eten';
-$sender = 'raf_smits@hotmail.com';
+$sender = 'keuken@donboscowilrijk.be';
 ?>
