@@ -11,7 +11,7 @@ try {
   $mail->SMTPDebug  = 2;                                            // enable SMTP Debug information
   $mail->SMTPAuth   = true;                                         // enable SMTP authentication
   $mail->SMTPSecure = "tls";                                        // sets the prefix to the server
-  $mail->Port       = 465;                                          // set the SMTP port for the GMAIL server
+  $mail->Port       = 587;                                          // set the SMTP port for the GMAIL server
   $mail->Username   = $account;                              // GMAIL username
   $mail->Password   = $password;                                 // GMAIL password
   $mail->SetFrom($sender, $sendername);
