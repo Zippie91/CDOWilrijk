@@ -10,9 +10,9 @@ try {
   $mail->Host       = 'smtp.gmail.com';                             // SMTP server
   $mail->SMTPDebug  = 1;                                            // enable SMTP Debug information
   $mail->SMTPAuth   = true;                                         // enable SMTP authentication
-  $mail->SMTPSecure = "ssl";                                        // sets the prefix to the server
+  $mail->SMTPSecure = "tls";                                        // sets the prefix to the server
 //$mail->Host       = "smtp.gmail.com";                             // sets GMAIL as the SMTP server
-  $mail->Port       = 465;                                          // set the SMTP port for the GMAIL server
+  $mail->Port       = 587;                                          // set the SMTP port for the GMAIL server
   $mail->Username   = $gmailaccount;            // GMAIL username
   $mail->Password   = $password;                                 // GMAIL password
   $mail->SetFrom($sender, $sendername);
