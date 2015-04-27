@@ -1,6 +1,4 @@
 <?php
-//include('mailbody.php');
-
 $headers = "From: " . strip_tags($sender) . "\r\n";
 $headers .= "Bcc: " . strip_tags($sender) . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
@@ -10,8 +8,8 @@ $subject = 'Bestelling van ' . $_POST["voornaam"] . " " . $_POST["naam"];
 
 $receiver = strip_tags($_POST["email"]);
 
-$body = 'Dit is een test mailtje';
-
+$body = 'Dit is een test mail';
+//include('mailbody.php');
 
 mail($receiver, $subject, $body, $headers);
 
