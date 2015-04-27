@@ -1,13 +1,13 @@
 <?php
-
+/*
 $headers = 'From: ' . strip_tags($sender) . '<br>';
 $headers .= 'Reply-To: '. strip_tags($sender) . '<br>';
 $headers .= 'Cc: ' . strip_tags($sender) . '<br>';
 $headers .= 'MIME-Version: 1.0<br>';
 $headers .= 'Content-Type: text/html; charset=ISO-8859-1';
+*/
 
-
-//$headers = "From: " . $sender . "\r\n";
+$headers = "From: lekker_eten@donboscowilrijk.be\r\n";
 
 $subject = 'Bestelling van ' . $_POST['voornaam'] . ' ' . $_POST['naam'];
 
