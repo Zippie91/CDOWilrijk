@@ -12,7 +12,10 @@ $receiver = strip_tags($_POST["email"]);
 
 $body = 'Dit is een test mailtje';
 
+
 mail($receiver, $subject, $body, $headers);
+
+print_r(error_get_last());
 
 /*
 if(mail($receiver, $subject, $body, $headers)) {
