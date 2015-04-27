@@ -106,5 +106,5 @@ $desserts = array(
 $gmailaccount = 'sender.dbowilrijk@gmail.com';
 $password = 'cdowilrijk123456';
 $sendername = 'Lekker eten';
-$sender = 'lekker_eten@donboscowilrijk.be';
+$sender = 'raf_smits@hotmail.com';
 ?>

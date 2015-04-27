@@ -8,7 +8,7 @@ $mail->IsSMTP();
 
 try {
   $mail->Host       = 'smtp.gmail.com';                             // SMTP server
-  //$mail->SMTPDebug  = 1;                                            // enable SMTP Debug information
+  $mail->SMTPDebug  = 1;                                            // enable SMTP Debug information
   $mail->SMTPAuth   = true;                                         // enable SMTP authentication
   $mail->SMTPSecure = "ssl";                                        // sets the prefix to the server
 //$mail->Host       = "smtp.gmail.com";                             // sets GMAIL as the SMTP server
