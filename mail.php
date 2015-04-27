@@ -7,7 +7,7 @@ $mail = new PHPMailer(true);
 $mail->IsSMTP();
 
 try {
-  $mail->Host       = 'uit.telenet.be';                             // SMTP server
+  $mail->Host       = 'send.one.com';                             // SMTP server
   $mail->SMTPDebug  = 1;                                            // enable SMTP Debug information
   $mail->SMTPAuth   = false;                                         // enable SMTP authentication
   //$mail->SMTPSecure = "tls";                                        // sets the prefix to the server
