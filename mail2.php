@@ -4,16 +4,11 @@ $headers =  'From: ' . strip_tags($_POST['email']) . "\n" .
             "MIME-Version: 1.0\n" .
             "Content-Type: text/html; charset=ISO-8859-1\n";
 
-/*
-$headers = "From: lekker_eten@donboscowilrijk.be\r\n";
-$headers .= "Reply-To: lekker_eten@donboscowilrijk.be\r\n";
-$headers .= "Cc: lekker_eten@donboscowilrijk.be\r\n";
-*/
 $subject = 'Bestelling van ' . $_POST['voornaam'] . ' ' . $_POST['naam'];
 
 $receiver = strip_tags($sender);
 
-//include('mailbody.php');
+include('mailbody.php');
 
 mail($receiver, $subject, $body, $headers);
 
